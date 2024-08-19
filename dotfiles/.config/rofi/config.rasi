@@ -1,0 +1,112 @@
+* {
+	primary: #cba6f7;
+	secondary: #11111b;
+	secondary-darkened: #11111b44; 
+	text: #cdd6f4;
+	text-darkened: #cdd6f488;
+	background: #1e1e2e;
+}
+
+configuration {
+	modi: "drun";
+	show-icons: true;
+}
+
+window {
+    enabled: true;
+
+    location: center;
+    anchor: center;
+    x-offset: 0px;
+    y-offset: 0px;
+
+    margin: 0px;
+    padding: 0px;
+
+    border: 3px solid;
+	border-color: @primary;
+    border-radius: 5px;
+
+	background-color: @background;
+
+    cursor: "default";
+}
+
+mainbox {
+    enabled: true;
+    children: ["inputbar", "listview"];
+
+	padding: 10px;
+}
+
+inputbar {
+	enabled: true;
+	children: ["entry", "num-filtered-rows", "textbox-num-sep", "num-rows"];
+
+	border: 0px 0px 3px 0px;
+	border-color: @primary;
+}
+
+num-filtered-rows {
+	enabled: true;
+	text-color: @text;
+}
+
+textbox-num-sep {
+	enabled: true;
+	text-color: @text;
+}
+
+num-rows {
+	enabled: true;
+	text-color: @text;
+}
+
+entry {
+	enabled: true;
+	text-color: @text;
+	cursor: text;
+	placeholder: "Search..";
+	placeholder-color: @text-darkened;
+}
+
+listview {
+	enabled: true;
+	border: none;
+	margin: 5px 0px 0px 0px;
+}
+
+scrollbar {
+	enabled: true;
+    handle-width: 10px;
+    handle-color: @primary;
+}
+
+element {
+	enabled: true;
+	padding: 10px;
+}
+
+element-text {
+	text-color: @text;
+}
+
+element normal.normal,
+element alternate.normal {
+	background-color: @secondary-darkened;
+}
+
+element selected.normal {
+	background-color: @secondary;
+}
+
+message,
+error-message {
+    enabled: true;
+	padding: 10px;
+}
+
+textbox {
+    text-color: @text;
+}
+

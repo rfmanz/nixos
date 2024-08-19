@@ -1,0 +1,26 @@
+(defwidget usage-bar [tooltip-text label-left-text progress-value label-right-text]
+  (tooltip
+    (label
+      :text tooltip-text 
+    )
+    (box
+      :orientation "horizontal"
+      :space-evenly false
+      :spacing 10 
+      (label
+        :text label-left-text 
+      )
+      (progress
+        :orientation "horizontal"
+        :class "progress-bar"
+        :valign "center" 
+        :value progress-value 
+        :width 5
+      )
+      (label
+        :text label-right-text 
+      )
+    )
+  ) 
+)
+
