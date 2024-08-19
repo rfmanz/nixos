@@ -1,0 +1,3 @@
+[submodule "1Khenzii__nixos-config"]
+	path = 1Khenzii__nixos-config
+	url = https://github.com/Khenziii/nixos-config.git
