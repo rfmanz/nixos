@@ -1,3 +1,6 @@
 [submodule "1Khenzii__nixos-config"]
 	path = 1Khenzii__nixos-config
 	url = https://github.com/Khenziii/nixos-config.git
+[submodule "sir_ethanator"]
+	path = sir_ethanator
+	url = https://github.com/SirEthanator/Hyprland-Dots.git
