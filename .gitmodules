@@ -7,3 +7,6 @@
 [submodule "3starter_config"]
 	path = 3starter_config
 	url = https://github.com/Misterio77/nix-starter-configs.git
+[submodule "4justgivemeaname"]
+	path = 4justgivemeaname
+	url = https://codeberg.org/justgivemeaname/.dotfiles.git
