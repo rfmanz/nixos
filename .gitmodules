@@ -1,6 +1,9 @@
 [submodule "1Khenzii__nixos-config"]
 	path = 1Khenzii__nixos-config
 	url = https://github.com/Khenziii/nixos-config.git
-[submodule "sir_ethanator"]
-	path = sir_ethanator
+[submodule "2sir_ethanator"]
+	path = 2sir_ethanator
 	url = https://github.com/SirEthanator/Hyprland-Dots.git
+[submodule "3starter_config"]
+	path = 3starter_config
+	url = https://github.com/Misterio77/nix-starter-configs.git
