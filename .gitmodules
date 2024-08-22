@@ -10,3 +10,9 @@
 [submodule "4justgivemeaname"]
 	path = 4justgivemeaname
 	url = https://codeberg.org/justgivemeaname/.dotfiles.git
+[submodule "2jason-config"]
+	path = 2jason-config
+	url = https://github.com/jason9075/nixos-config.git
+[submodule "5brunoc"]
+	path = 5brunoc
+	url = https://codeberg.org/brunoc/nixos-files.git

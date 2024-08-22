@@ -1,8 +1,0 @@
-{ ... }:
-
-{
-  imports = [
-    ./ts-node.nix
-  ];
-}
-
