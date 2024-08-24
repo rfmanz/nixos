@@ -22,10 +22,11 @@ hardware.opengl = {
 
 users.users.${systemSettings.username} = {
   isNormalUser = true;
-  description = userSettings.name;
+  description = systemSettings.name;
   extraGroups = [ "networkmanager" "wheel" "docker" ];
   shell = pkgs.zsh;
 };
+
 
   nixpkgs.config.allowUnfree = true;
   programs.zsh.enable = true;

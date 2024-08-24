@@ -25,7 +25,7 @@
     in
     {
       nixosConfigurations = {
-        rfmanz = nixpkgs.lib.nixosSystem {
+        nixos = nixpkgs.lib.nixosSystem {
           inherit (systemSettings) system;
           specialArgs = { inherit systemSettings; };             
           modules = [

@@ -16,3 +16,9 @@
 [submodule "5brunoc"]
 	path = 5brunoc
 	url = https://codeberg.org/brunoc/nixos-files.git
+[submodule "6emmet"]
+	path = 6emmet
+	url = https://gitlab.com/librephoenix/nixos-config.git
+[submodule "7misterio"]
+	path = 7misterio
+	url = https://github.com/Misterio77/nix-config.git
