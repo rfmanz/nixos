@@ -7,6 +7,19 @@
       ./sound.nix      
       ./hardware-configuration.nix 
     ];
+
+  programs.hyprland = {
+    enable = true;
+    nvidiaPatches = true;
+    xwayland.enable = true;
+  };
+
+  environment.systemPackages = with pkgs; [
+    git
+    vscode
+    inputs.hyprland.packages.${pkgs.system}.default
+  ];
+
 nix.package = pkgs.nixFlakes;    
 nix.settings.experimental-features = [ "nix-command" "flakes" ];
 boot.loader.systemd-boot.enable = true;
@@ -14,10 +27,10 @@ boot.loader.efi.canTouchEfiVariables = true;
 networking.hostName = systemSettings.hostname;
 networking.networkmanager.enable = true;
 
-hardware.opengl = {
-  enable = true;
-  driSupport32Bit = true;
-};
+# hardware.opengl = {
+#   enable = true;
+#   driSupport32Bit = true;
+# };
 
 users.users.${systemSettings.username} = {
   isNormalUser = true;

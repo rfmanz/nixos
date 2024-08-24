@@ -27,7 +27,7 @@
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
           inherit (systemSettings) system;
-          specialArgs = { inherit systemSettings; };             
+          specialArgs = { inherit systemSettings inputs; };             
           modules = [
             ./nixos/configuration.nix
             catppuccin.nixosModules.catppuccin

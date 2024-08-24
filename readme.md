@@ -14,3 +14,18 @@ so the sequence for a new build is the following:
     - but to set up profiles you need to reconfigure configuration.nix quite a lot 
 
     - first setup minimal and then use nix-shell for aditional stuff 
+
+
+Packages to consider: 
+
+- R
+- Cursor 
+- qbitorrent 
+
+
+open spotify, chrome, vscode on login. 
+
+swipe to change kinda like this: https://github.com/material-shell/material-shell?tab=readme-ov-file#spatial-model 
+
+then hotkeys for these apps + terminal 
+
