@@ -2,7 +2,7 @@
 
 {
   # Set your time zone.
-  time.timezone = "America/Lima";
+  time.timeZone = "America/Lima";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";

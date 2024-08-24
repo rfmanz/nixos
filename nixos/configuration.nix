@@ -16,13 +16,12 @@ networking.networkmanager.enable = true;
 
 hardware.opengl = {
   enable = true;
-  driSupport = true;
   driSupport32Bit = true;
 };
 
 users.users.${systemSettings.username} = {
   isNormalUser = true;
-  description = systemSettings.name;
+  description = "rfmanz";
   extraGroups = [ "networkmanager" "wheel" "docker" ];
   shell = pkgs.zsh;
 };
