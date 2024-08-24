@@ -11,7 +11,20 @@
 		};
 	};
   imports = [
-    ./modules
+    # ./modules
+  vscode
+hyprland
+yazi
+waybar
+rofi-wayland
+neofetch
+git
+vlc
+spotify
+asciiquarium
+google-chrome
+btop
+zathura  
   ];
   programs.home-manager.enable = true;
 }
