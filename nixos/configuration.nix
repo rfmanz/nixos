@@ -5,20 +5,17 @@
     [ ./locale.nix
       ./nvidia.nix
       ./sound.nix      
-      ./hardware-configuration.nix 
-      inputs.hyprland.nixosModules.default
+      ./hardware-configuration.nix      
     ];
 
   programs.hyprland = {
     enable = true;
-    nvidiaPatches = true;
     xwayland.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
     git
-    vscode
-    inputs.hyprland.packages.${pkgs.system}.default
+    vscode    
   ];
 
 nix.package = pkgs.nixFlakes;    
