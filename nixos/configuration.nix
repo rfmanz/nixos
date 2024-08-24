@@ -6,6 +6,7 @@
       ./nvidia.nix
       ./sound.nix      
       ./hardware-configuration.nix 
+      inputs.hyprland.nixosModules.default
     ];
 
   programs.hyprland = {
@@ -48,8 +49,7 @@ users.users.${systemSettings.username} = {
   hardware.bluetooth.powerOnBoot = true;
 
   nix.settings.auto-optimise-store = true;
-
-  environment.systemPackages = with pkgs; [ git vscode ];
+ 
 
   system.stateVersion = "24.05"; 
 
