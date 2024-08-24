@@ -29,3 +29,4 @@ swipe to change kinda like this: https://github.com/material-shell/material-shel
 
 then hotkeys for these apps + terminal 
 
+       error: attribute 'environment.systemPackages' already defined at /nix/store/rq3nhqzcadkr2m31nyjqrsc8663brnfs-source/nixos/configuration.nix:17:3
