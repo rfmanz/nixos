@@ -12,7 +12,7 @@
 	};
   imports = [
     # ./modules
-  vscode
+vscode
 hyprland
 yazi
 waybar

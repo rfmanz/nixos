@@ -1,26 +1,41 @@
-https://codeberg.org/justgivemeaname/.dotfiles.git
+# install
 
-https://codeberg.org/brunoc/nixos-files
+1. `export NIXPKGS_ALLOW_UNFREE=1 `
+2. `nix-shell -p git vscode`
+3. `sudo cp /etc/nixos/hardware_config ./nixos/`
+4. modify `profile` in flake.nix if needed. default is minimal.
+5. `sudo nixos-rebuild switch --flake .` | if more that one username: `sudo nixos-rebuild switch --flake ".#nixos" `
+6. `nix-collect-garbage`    
 
-so the sequence for a new build is the following: 
+# notes
 
-1. you install nixos with the usb stick. 
-2. nix-shell git vscode
-3. git clone the repo 
-4. but then you have to modify:
+**structure:**
 
-    - copy the auto generated hardware config 
-    - then lets say you have two profiles: main & minimal | set this install to either of them 
-    - but to set up profiles you need to reconfigure configuration.nix quite a lot 
+- system: -> this is stuff that is installed on a system wide level
+ 
+- profiles:
+    - minimal 
+        - configuration.nix
+        - home.nix -> this home.nix will be base imports for more involved home.nixs. i.e: https://gitlab.com/librephoenix/nixos-config/-/blob/main/profiles/work/home.nix?ref_type=heads
+    - rog 
+        - configuration.nix
+        - home.nix
 
-    - first setup minimal and then use nix-shell for aditional stuff 
+TODO 
 
+- modify flake to point to profile 
+- hyprland config. because if not we're useless on first login 
 
-Packages to consider: 
+zsh  + starship 
+
+---
+**packages to consider:** 
 
 - R
 - Cursor 
 - qbitorrent 
+
+vscode config  & keyboard shortcuts 
 
 
 open spotify, chrome, vscode on login. 
@@ -29,4 +44,9 @@ swipe to change kinda like this: https://github.com/material-shell/material-shel
 
 then hotkeys for these apps + terminal 
 
-       error: attribute 'environment.systemPackages' already defined at /nix/store/rq3nhqzcadkr2m31nyjqrsc8663brnfs-source/nixos/configuration.nix:17:3
+
+# resources
+
+https://codeberg.org/justgivemeaname/.dotfiles.git
+
+https://codeberg.org/brunoc/nixos-files
