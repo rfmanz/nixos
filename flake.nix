@@ -7,13 +7,12 @@
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-    catppuccin.url = "github:catppuccin/nix";
+    };    
     hyprland.url = "github:hyprwm/Hyprland";
     hyprwm-contrib.url = "github:hyprwm/contrib";
   };
 
-  outputs = { self, nixpkgs, home-manager, catppuccin, hyprland, ... }@inputs: 
+  outputs = { self, nixpkgs, home-manager, hyprland, ... }@inputs: 
     let
       systemSettings = {
         profile = "minimal"; # !! SET !!
@@ -26,7 +25,7 @@
     in
     {
       nixosConfigurations = {
-        system = lib.nixosSystem {
+        system = nixpkgs.lib.nixosSystem {
           system = systemSettings.system;
           modules = [
             (./. + "/profiles" + ("/" + systemSettings.profile) + "/configuration.nix")
