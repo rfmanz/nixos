@@ -16,8 +16,9 @@
   outputs = { self, nixpkgs, home-manager, catppuccin, hyprland, ... }@inputs: 
     let
       systemSettings = {
+        profile = "minimal"; # !! SET !!
         system = "x86_64-linux";
-        hostname = "nixos";
+        hostname = "nixos";        
         username = "rfmanz";         
         timezone = "America/Lima";
         locale = "en_US.UTF-8";              
@@ -25,28 +26,29 @@
     in
     {
       nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
-          inherit (systemSettings) system;
-          specialArgs = { inherit systemSettings inputs; };             
+        system = lib.nixosSystem {
+          system = systemSettings.system;
           modules = [
-            ./nixos/configuration.nix
-            catppuccin.nixosModules.catppuccin
-            hyprland.nixosModules.default
+            (./. + "/profiles" + ("/" + systemSettings.profile) + "/configuration.nix")
+             hyprland.nixosModules.default
             { programs.hyprland.enable = true; }
             { programs.sway.enable = true; }
-          ];
+          ]; 
+          specialArgs = {
+            inherit systemSettings;
+            inherit inputs;
+          };
         };
       };
       homeConfigurations = {
         "rfmanz@nixos" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.${systemSettings.system};
           modules = [
-            ./home/home.nix 
-            catppuccin.homeManagerModules.catppuccin
+            (./. + "/profiles" + ("/" + systemSettings.profile) + "/home.nix")        
           ];
           extraSpecialArgs = { 
             inherit inputs;
-            # inherit systemSettings; 
+            inherit systemSettings; 
           };         
         };
       };

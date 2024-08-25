@@ -27,7 +27,9 @@ TODO
 - hyprland config. because if not we're useless on first login. maybe two hypr configs. no animations for minimal 
 
 kill waybar 
+
 pywal for theme change 
+
 zsh  + starship 
 
 ---

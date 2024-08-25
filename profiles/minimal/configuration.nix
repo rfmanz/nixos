@@ -27,20 +27,17 @@ networking.networkmanager.enable = true;
 users.users.${systemSettings.username} = {
   isNormalUser = true;
   description = "rfmanz";
-  extraGroups = [ "networkmanager" "wheel" "docker" ];
+  extraGroups = [ "networkmanager" "wheel" ];
   shell = pkgs.zsh;
 };
 
-
 nixpkgs.config.allowUnfree = true;
 programs.zsh.enable = true;
-virtualisation.docker.enable = true;
 
 hardware.bluetooth.enable = true;
 hardware.bluetooth.powerOnBoot = true;
 
 nix.settings.auto-optimise-store = true;
-
 
 system.stateVersion = "24.05"; 
 
