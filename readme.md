@@ -5,6 +5,7 @@
 3. `sudo cp /etc/nixos/hardware_config ./nixos/`
 4. modify `profile` in flake.nix if needed. default is minimal.
 5. `sudo nixos-rebuild switch --flake .` | if more that one username: `sudo nixos-rebuild switch --flake ".#nixos" `
+6. home-manager switch --flake 
 6. `nix-collect-garbage`    
 
 # notes
