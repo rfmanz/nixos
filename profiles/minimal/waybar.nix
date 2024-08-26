@@ -6,7 +6,7 @@
     settings = {
       mainBar = {
         layer = "top";
-        position = "bottom";
+        position = "top";
         modules-left = [
           "hyprland/workspaces" 
           "custom/right-arrow-dark"
