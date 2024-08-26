@@ -28,12 +28,11 @@ users.users.${systemSettings.username} = {
   isNormalUser = true;
   description = "rfmanz";
   extraGroups = [ "networkmanager" "wheel" ];
-  shell = pkgs.bash;
+  shell = pkgs.zsh;
 };
 
 nixpkgs.config.allowUnfree = true;
-# programs.zsh.enable = true;
-programs.bash.enable = true;
+programs.zsh.enable = true;
 
 hardware.bluetooth.enable = true;
 hardware.bluetooth.powerOnBoot = true;

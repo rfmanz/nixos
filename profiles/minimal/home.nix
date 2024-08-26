@@ -21,7 +21,7 @@ home.packages = with pkgs; [
 vscode
 hyprland
 yazi
-bash
+kitty
 waybar
 rofi-wayland
 neofetch

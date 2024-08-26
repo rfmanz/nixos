@@ -9,7 +9,7 @@
       enable = true;
       settings = {
         "$mod" = "SUPER"; 
-        "$term" = "bash";    
+        "$term" = "kitty";    
         monitor = [ ",preferred, auto, auto" ];
         decoration = {
           rounding = 0;
@@ -48,7 +48,7 @@
         };
         bind = [
          #terminal
-         "$mod,Return,exec,$term"
+         "$mod,t,exec,$term"
 
         "$mod, Z, exec, rofi -show drun -show-icons"
 
