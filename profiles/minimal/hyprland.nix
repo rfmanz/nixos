@@ -97,9 +97,9 @@
        
 
         # volume control
-        ",XF86AudioRaiseVolume,exec, pamixer -i 5"
-        ",XF86AudioLowerVolume,exec, pamixer -d 5"
-        ",XF86AudioMute,exec, pamixer -t"
+        ",XF86AudioRaiseVolume,exec, volumectl -u up"
+        ",XF86AudioLowerVolume,exec,  volumectl -u down "
+        ",XF86AudioMute,exec,  volumectl toggle-mute "
 
         # music control bindings
         ",XF86AudioPlay,exec, playerctl play-pause"
@@ -108,13 +108,34 @@
         ", XF86AudioStop, exec, playerctl stop"
         ];
 
-        bindm =
-          [ "$mod,mouse:272,movewindow" "$mod,mouse:273,resizewindow" ];
-
         exec-once = [
           "waybar"
         ];
+
+       plugins = [
+                hycov.packages.${pkgs.system}.hycov
+              ];
+        extraConfig = ''
+                bind = ALT,tab,hycov:toggleoverview
+                bind=ALT,left,hycov:movefocus,l
+                bind=ALT,right,hycov:movefocus,r
+                bind=ALT,up,hycov:movefocus,u
+                bind=ALT,down,hycov:movefocus,d
+
+                plugin {
+                    hycov {
+                      overview_gappo = 60 #gaps width from screen
+                      overview_gappi = 24 #gaps width from clients
+                	    hotarea_size = 10 #hotarea size in bottom left,10x10
+                	    enable_hotarea = 1 # enable mouse cursor hotarea
+                    }
+                }
+              ''
       };
     };
   };
 }
+
+
+
+
