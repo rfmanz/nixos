@@ -1,12 +1,22 @@
 # install
 
-1. `export NIXPKGS_ALLOW_UNFREE=1 `
-2. `nix-shell -p git vscode`
-3. `sudo cp /etc/nixos/hardware_config ./nixos/`
-4. modify `profile` in flake.nix if needed. default is minimal.
-5. `sudo nixos-rebuild switch --flake .` | if more that one username: `sudo nixos-rebuild switch --flake ".#nixos" `
-6. home-manager switch --flake 
-6. `nix-collect-garbage`    
+export NIXPKGS_ALLOW_UNFREE=1  
+
+nix-shell -p git vscode
+
+sudo cp /etc/nixos/hardware_config ./nixos/ 
+
+sudo nixos-rebuild switch --flake 
+
+home-manager switch --flake 
+
+    modify `profile` in flake.nix if needed. default is minimal.
+
+    if more that one username: `sudo nixos-rebuild switch --flake ".#nixos" `
+
+ 
+
+nix-collect-garbage`    
 
 # notes
 
