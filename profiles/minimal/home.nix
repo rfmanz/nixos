@@ -11,7 +11,10 @@
 		};
 	};
   imports = [
-      ../../home/minimal      
+      # ../../home/minimal      
+      ./hyprland.nix
+      ./rofi.nix
+      ./waybar.nix
   ];
 
 home.packages = with pkgs; [

@@ -26,9 +26,10 @@
     {
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
-          system = systemSettings.system;
-          modules = [
-            ./profiles/${systemSettings.profile}/configuration.nix             
+        system = systemSettings.system;
+          modules = [        
+            (./. + "/profiles" + ("/" + systemSettings.profile)
+              + "/configuration.nix")
             { programs.hyprland.enable = true; }
             { programs.sway.enable = true; }
           ]; 
@@ -41,8 +42,8 @@
       homeConfigurations = {
         "rfmanz@nixos" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.${systemSettings.system};
-          modules = [
-            ./profiles/${systemSettings.profile}/home.nix      
+          modules = [(./. + "/profiles" + ("/" + systemSettings.profile)
+              + "/home.nix")       
           ];
           extraSpecialArgs = { 
             inherit inputs;
