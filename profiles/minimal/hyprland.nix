@@ -89,6 +89,7 @@
         "SHIFT ALT, TAB, cyclenext, prev                                # Cycle through windows backwards"
         "$mod, Q, killactive                                            # Close window"
         "$mod, F, fullscreen                                            # Toggle fullscreen"
+        "$mod, F, fullscreen,1                                            # maximize window"
         "$mod, H, movefocus, l                                          # Focus left"
         "$mod, L, movefocus, r                                          # Focus right"
         "$mod, K, movefocus, u                                          # Focus up"
