@@ -35,8 +35,7 @@
           gaps_in = 4;
           gaps_out = 10;
           border_size = 2;
-          layout = "dwindle"; # master|dwindle ;
-          workspace_swipe = true;
+          layout = "dwindle"; # master|dwindle ;      
         };
         misc = {
           disable_autoreload = true;
