@@ -4,7 +4,8 @@
   imports =
     [ ../../system/locale.nix
       ../../system/sound.nix      
-      ../../system/hardware-configuration.nix      
+      ../../system/hardware-configuration.nix    
+      ../../system/greetd.nix  
     ];
 
   programs.hyprland = {
