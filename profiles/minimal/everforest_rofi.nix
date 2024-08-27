@@ -183,7 +183,7 @@
       text-color = mkLiteral "inherit";
       cursor = mkLiteral "inherit";
       vertical-align = mkLiteral "0.5";
-      horizontal-align = mkLiteral "center";
+      horizontal-align = mkLiteral "0.0";
     };
 
 
