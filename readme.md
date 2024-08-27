@@ -10,6 +10,9 @@ sudo nixos-rebuild switch --flake .
 
 home-manager switch --flake .
 
+nix-channel --add https://github.com/nix-community/home-manager/archive/release-24.05.tar.gz home-manager
+nix-channel --update
+
 sudo nix-channel --update
 sudo nix flake update
 
