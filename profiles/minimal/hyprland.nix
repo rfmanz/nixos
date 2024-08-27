@@ -4,9 +4,9 @@
 
     home.packages = with pkgs; [
         waybar  
-        spotify
-        google-chrome
-        vscode    
+        # spotify
+        # google-chrome
+        # vscode    
     ];
     wayland.windowManager.hyprland = {
       enable = true;
@@ -33,7 +33,10 @@
             ignore_opacity = false;
           };
         };
-        gestures = {workspace_swipe = true;};
+        gestures = {
+          workspace_swipe = true;
+          workspace_swipe_invert = false;
+          };
         general = {
           gaps_in = 4;
           gaps_out = 10;
@@ -51,7 +54,6 @@
           focus_on_activate = true;
         };
 
-
         windowrulev2 = [
         "workspace 1, class:^(google-chrome)$"
         "workspace 2, class:^(vscode)$"
@@ -59,9 +61,14 @@
         ];
 
         bind = [
-         #terminal
+         #open stuff 
         "$mod,RETURN,exec,$term"
         "$mod, Z, exec, rofi -show drun -show-icons"
+        "$mod, V, exec, vscode"
+        "$mod, S, exec, spotify"
+        "$mod, C, exec, google-chrome"
+
+
 
         #window actions 
         "$mod, Q, killactive                                            # Close window"
@@ -111,9 +118,9 @@
 
         exec-once = [
           "waybar"
-          "spotify"
-          "google-chrome"
-          "vscode"
+          # "spotify"
+          # "google-chrome"
+          # "vscode"
         ];
       };
     };
