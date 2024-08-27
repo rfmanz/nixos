@@ -60,7 +60,7 @@
         "workspace 1, class:^(Google-chrome)$"        
         "workspace 2, class:^(Code)$,title:^(Visual Studio Code)$"
         "workspace 3, class:^(Spotify)$,title:^(Spotify)$"
-        "maximize,title:^(Yazi)$"                
+        "fullsreen,1,title:^(Yazi)$"                
       ];
 
         bind = [
