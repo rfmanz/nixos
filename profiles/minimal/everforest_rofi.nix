@@ -177,13 +177,12 @@
         size = 32;
         cursor = mkLiteral "inherit";
       };
-
     "element-text" = {
       background-color = mkLiteral "transparent";
       text-color = mkLiteral "inherit";
       cursor = mkLiteral "inherit";
       vertical-align = mkLiteral "0.5";
-      horizontal-align = mkLiteral "0.0";
+      horizontal-align = "left"; # or 0
     };
 
 
