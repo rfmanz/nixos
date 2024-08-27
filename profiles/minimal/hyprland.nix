@@ -54,11 +54,11 @@
           focus_on_activate = true;
         };
 
-        windowrulev2 = [
-        "workspace 1, class:^(google-chrome)$"
-        "workspace 2, class:^(vscode)$"
-        "workspace 3, class:^(spotify)$"        
-        ];
+      windowrulev2 = [
+        "workspace 1, class:^(Google-chrome)$,title:^(Google Chrome)$"
+        "workspace 2, class:^(Code)$,title:^(Visual Studio Code)$"
+        "workspace 3, class:^(Spotify)$,title:^(Spotify)$"
+      ];
 
         bind = [
          #open stuff 
@@ -67,8 +67,6 @@
         "$mod, V, exec, vscode"
         "$mod, S, exec, spotify"
         "$mod, C, exec, google-chrome"
-
-
 
         #window actions 
         "$mod, Q, killactive                                            # Close window"
