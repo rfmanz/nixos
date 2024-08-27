@@ -37,6 +37,7 @@
           workspace_swipe = true;
           workspace_swipe_invert = false;
           };
+        input = {kb_layout = uk;};
         general = {
           gaps_in = 4;
           gaps_out = 10;
@@ -62,6 +63,7 @@
       ];
 
         bind = [
+          
          #open stuff 
         "$mod,RETURN,exec,$term"
         "$mod, Z, exec, rofi -show drun -show-icons"
@@ -70,6 +72,9 @@
         "$mod, C, exec, google-chrome-stable"
 
         #window actions 
+        "$mod, J, togglesplit                                            # Toggle split"
+        "$mod, P, togglefloating                                            # Toggle split"
+
         "$mod, Q, killactive                                            # Close window"
         "$mod, F, fullscreen                                            # Toggle fullscreen"
         "$mod, T, fullscreen,1                                           # maximize window"

@@ -14,8 +14,8 @@
   imports = [
       # ../../home/minimal      
       ./hyprland.nix
-      # ./rofi.nix
-      ./everforest_rofi.nix
+      ./rofi.nix
+      # ./everforest_rofi.nix
       ./waybar.nix
   ];
 
