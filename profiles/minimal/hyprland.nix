@@ -117,8 +117,8 @@
        
       
         # volume control
-        ",XF86AudioRaiseVolume,exec, volumectl -u up"
-        ",XF86AudioLowerVolume,exec,  volumectl -u down "
+        "$mod, equal,  exec, pactl -- set-sink-volume 0 +10%            # Volume up"
+        "$mod, minus, exec, pactl -- set-sink-volume 0 -10%             # Volume down"
         ",XF86AudioMute,exec,  volumectl toggle-mute "
 
         # music control bindings
