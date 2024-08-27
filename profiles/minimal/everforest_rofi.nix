@@ -178,13 +178,14 @@
         cursor = mkLiteral "inherit";
       };
 
-      "element-text" = {
-        background-color = mkLiteral "transparent";
-        text-color = mkLiteral "inherit";
-        cursor = mkLiteral "inherit";
-        vertical-align = 0.5;
-        horizontal-align = 0.0;
-      };
+    "element-text" = {
+      background-color = mkLiteral "transparent";
+      text-color = mkLiteral "inherit";
+      cursor = mkLiteral "inherit";
+      vertical-align = mkLiteral "0.5";
+      horizontal-align = mkLiteral "center";
+    };
+
 
       "message" = {
         background-color = mkLiteral "transparent";
