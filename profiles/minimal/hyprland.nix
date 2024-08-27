@@ -37,7 +37,7 @@
           workspace_swipe = true;
           workspace_swipe_invert = false;
           };
-        input = {kb_layout = uk;};
+        input = {kb_layout = "uk";};
         general = {
           gaps_in = 4;
           gaps_out = 10;
