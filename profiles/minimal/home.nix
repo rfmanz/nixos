@@ -4,6 +4,7 @@
   home.username = "rfmanz";
   home.homeDirectory = "/home/rfmanz";
   home.stateVersion = "24.05";
+  home.enableNixpkgsReleaseCheck = false;
   nixpkgs = {
 		config = {
 			allowUnfree = true;
