@@ -5,7 +5,7 @@
     home.packages = with pkgs; [
         waybar  
         spotify
-        google-chrom
+        google-chrome
         vscode    
     ];
     wayland.windowManager.hyprland = {
