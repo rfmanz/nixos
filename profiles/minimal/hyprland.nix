@@ -55,7 +55,7 @@
         };
 
       windowrulev2 = [
-        "workspace 1, class:^(Google-chrome)$,title:^(Google Chrome)$"
+        "workspace 1, class:^(Google-chrome-stable)$,title:^(Google Chrome Stable)$"
         "workspace 2, class:^(Code)$,title:^(Visual Studio Code)$"
         "workspace 3, class:^(Spotify)$,title:^(Spotify)$"
       ];
