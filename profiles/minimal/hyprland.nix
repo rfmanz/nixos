@@ -59,9 +59,11 @@
       windowrulev2 = [
         "workspace 1, class:^(Google-chrome)$"        
         "workspace 2, class:^(Code)$,title:^(Visual Studio Code)$"
-        "workspace 3, class:^(kitty)$,title:^(Yazi:).*$"              
+        #"workspace 3, class:^(kitty)$,title:^(Yazi: ~/)$"              
         "workspace 4, class:^(Spotify)$,title:^(Spotify)$"        
       ];
+
+      
 
         bind = [
           
