@@ -41,7 +41,7 @@
         };
       };
       homeConfigurations = {
-        "rfmanz@nixos" = home-manager.lib.homeManagerConfiguration {
+        "rfmanz" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.${systemSettings.system};
           modules = [(./. + "/profiles" + ("/" + systemSettings.profile)
               + "/home.nix")       

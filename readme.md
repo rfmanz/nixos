@@ -6,6 +6,8 @@ nix-shell -p git vscode
 
 sudo cp /etc/nixos/hardware_config ./nixos/ 
 
+ home-manager switch --flake .#rfmanz 
+
 sudo nixos-rebuild switch --flake .
 
 home-manager switch --flake .
