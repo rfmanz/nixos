@@ -31,6 +31,7 @@ asciiquarium
 google-chrome
 btop
 pywal
+spotify
   ];
   programs.home-manager.enable = true;
 }

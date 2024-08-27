@@ -6,17 +6,33 @@ nix-shell -p git vscode
 
 sudo cp /etc/nixos/hardware_config ./nixos/ 
 
-sudo nixos-rebuild switch --flake 
+sudo nixos-rebuild switch --flake .
 
-home-manager switch --flake 
+home-manager switch --flake .
+
+sudo nix-channel --update
+sudo nix flake update
 
     modify `profile` in flake.nix if needed. default is minimal.
 
     if more that one username: `sudo nixos-rebuild switch --flake ".#nixos" `
 
- 
+    `nix-collect-garbage`    
 
-nix-collect-garbage`    
+ 
+waybar : make nicer - workspaces 
+
+rofi : make nicer 
+
+hyprland : figure out controls 
+
+trackpad, vertical 
+
+cursors: in vscode cursor is ugly 
+
+starship 
+
+make media keys work 
 
 # notes
 
