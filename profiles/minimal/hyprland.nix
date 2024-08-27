@@ -30,6 +30,7 @@
             ignore_opacity = false;
           };
         };
+        gestures = {workspace_swipe = true;};
         general = {
           gaps_in = 4;
           gaps_out = 10;
