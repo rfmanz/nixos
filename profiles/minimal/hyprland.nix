@@ -131,9 +131,10 @@
 
         exec-once = [
           "waybar"
-          # "spotify"
-          # "google-chrome"
-          # "vscode"
+          "workspace 1, silent, google-chrome-stable"
+          "workspace 2, silent, code"
+          "workspace 3, silent, kitty"
+          
         ];
       };
     };
