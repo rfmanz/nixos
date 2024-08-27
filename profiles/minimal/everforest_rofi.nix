@@ -50,7 +50,7 @@
       "imagebox" = {
         padding = 20;
         background-color = mkLiteral "transparent";
-        background-image = mkLiteral "url('~/.config/rofi/Garden.png', height)";
+        background-image = mkLiteral "url('./Garden.png', height)";
         orientation = mkLiteral "vertical";
         children = mkLiteral "[inputbar, dummy, mode-switcher]";
       };
