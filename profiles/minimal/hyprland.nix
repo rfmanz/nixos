@@ -3,7 +3,10 @@
   config = {
 
     home.packages = with pkgs; [
-        waybar
+        waybar  
+        spotify
+        google-chrom
+        vscode    
     ];
     wayland.windowManager.hyprland = {
       enable = true;
