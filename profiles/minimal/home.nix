@@ -14,7 +14,8 @@
   imports = [
       # ../../home/minimal      
       ./hyprland.nix
-      ./rofi.nix
+      # ./rofi.nix
+      ./everforest_rofi.nix
       ./waybar.nix
   ];
 
@@ -27,11 +28,9 @@ waybar
 rofi-wayland
 neofetch
 git
-vlc
 asciiquarium
 google-chrome
 btop
-pywal
 spotify
   ];
   programs.home-manager.enable = true;
