@@ -60,6 +60,7 @@
         "workspace 1, class:^(Google-chrome)$"        
         "workspace 2, class:^(Code)$,title:^(Visual Studio Code)$"
         "workspace 3, class:^(Spotify)$,title:^(Spotify)$"
+        "class:^(Google-chrome)$"        
       ];
 
         bind = [
@@ -70,6 +71,7 @@
         "$mod, V, exec, code"
         "$mod, S, exec, spotify"
         "$mod, C, exec, google-chrome-stable"
+        "$mod, Y, exec, yazi, maximize"
 
         #window actions 
         "$mod, J, togglesplit                                            # Toggle split"
