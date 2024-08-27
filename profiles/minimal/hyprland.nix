@@ -78,6 +78,9 @@
         "$mod, J, movefocus, d                                         # Focus down"     
 
           # workspace
+        "$mod SHIFT, 1, movetoworkspace, 1                              # Move window to workspace 1"
+        "$mod SHIFT, 2, movetoworkspace, 2                              # Move window to workspace 2"
+          
         "$mod, 1, workspace, 1                                          # Switch to workspace 1"
         "$mod, 2, workspace, 2                                          # Switch to workspace 2"
         "$mod, 3, workspace, 3                                          # Switch to workspace 3"
