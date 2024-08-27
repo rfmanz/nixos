@@ -59,8 +59,7 @@
       windowrulev2 = [
         "workspace 1, class:^(Google-chrome)$"        
         "workspace 2, class:^(Code)$,title:^(Visual Studio Code)$"
-        "workspace 3, class:^(Spotify)$,title:^(Spotify)$"
-        "class:^(Google-chrome)$"        
+        "workspace 3, class:^(Spotify)$,title:^(Spotify)$"        
       ];
 
         bind = [
@@ -74,8 +73,8 @@
         "$mod, Y, exec, yazi, maximize"
 
         #window actions 
-        "$mod, J, togglesplit                                            # Toggle split"
-        "$mod, P, togglefloating                                            # Toggle split"
+        #"$mod, J, togglesplit                                            # Toggle split"
+        #"$mod, P, togglefloating                                            # Toggle split"
 
         "$mod, Q, killactive                                            # Close window"
         "$mod, F, fullscreen                                            # Toggle fullscreen"
