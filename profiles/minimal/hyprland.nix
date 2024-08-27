@@ -64,9 +64,9 @@
          #open stuff 
         "$mod,RETURN,exec,$term"
         "$mod, Z, exec, rofi -show drun -show-icons"
-        "$mod, V, exec, vscode"
+        "$mod, V, exec, code"
         "$mod, S, exec, spotify"
-        "$mod, C, exec, google-chrome"
+        "$mod, C, exec, google-chrome-stable"
 
         #window actions 
         "$mod, Q, killactive                                            # Close window"
