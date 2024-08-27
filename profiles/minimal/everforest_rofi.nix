@@ -197,7 +197,7 @@
         background-color = mkLiteral "@background-alt";
         text-color = mkLiteral "@foreground";
         vertical-align = 0.5;
-        horizontal-align = 0.0;
+        horizontal-align = mkLiteral "0.0";
       };
 
       "error-message" = {
