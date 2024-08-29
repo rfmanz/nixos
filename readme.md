@@ -24,15 +24,21 @@ sudo nix flake update
 
     `nix-collect-garbage`    
 
- 
-waybar : make nicer - workspaces 
 
-rofi : make nicer 
+nix-shell -p 'python3.withPackages(ps: with ps; [ pip virtualenv ])'
 
-hyprland : figure out controls 
+nix-env -iA nixpkgs.python3.withPackages(ps: with ps; [ pip virtualenv ])
 
-trackpad, vertical 
+# Create a virtual environment
+virtualenv myenv
 
+# Activate the virtual environment
+source myenv/bin/activate
+
+# Now you can install packages without the read-only file system error
+pip install <package_name>
+
+  
 cursors: in vscode cursor is ugly 
 
 starship 
