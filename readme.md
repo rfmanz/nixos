@@ -29,14 +29,18 @@ nix-shell -p 'python3.withPackages(ps: with ps; [ pip virtualenv ])'
 
 nix-env -iA nixpkgs.python3.withPackages(ps: with ps; [ pip virtualenv ])
 
-# Create a virtual environment
+Create a virtual environment
+
 virtualenv myenv
 
-# Activate the virtual environment
+Activate the virtual environment
+
 source myenv/bin/activate
 
-# Now you can install packages without the read-only file system error
+Now you can install packages without the read-only file system error
+
 pip install <package_name>
+
 
   
 cursors: in vscode cursor is ugly 
