@@ -10,10 +10,10 @@
         (pkgs.buildFHSUserEnv {
           name = "python-env";
           targetPkgs = pkgs: (with pkgs; [
-            python39
-            python39Packages.pip
-            python39Packages.virtualenv
-            python39Packages.numpy
+            python310
+            python310Packages.pip
+            python310Packages.virtualenv
+            python310Packages.numpy
             pythonManylinuxPackages.manylinux2014Package
             cmake
             ninja
@@ -22,7 +22,7 @@
           ]);
           runScript = "${pkgs.writeShellScriptBin "runScript" (''
               set -e
-              test -d .venv || ${pkgs.python3.interpreter} -m venv .venv
+              test -d .venv || ${pkgs.python310.interpreter} -m venv .venv
               source .venv/bin/activate
               set +e
             ''
