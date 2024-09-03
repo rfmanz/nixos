@@ -1,8 +1,8 @@
 { config, pkgs, inputs, systemSettings, ... }:
 
 {
-  home.username = "rfmanz";
-  home.homeDirectory = "/home/rfmanz";
+  home.username = "raf";
+  home.homeDirectory = "/home/raf";
   home.stateVersion = "24.05";
   home.enableNixpkgsReleaseCheck = false;
   nixpkgs = {

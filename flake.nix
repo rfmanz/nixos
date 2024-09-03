@@ -19,7 +19,7 @@
         profile = "minimal"; # !! SET !!
         system = "x86_64-linux";
         hostname = "nixos";        
-        username = "rfmanz";         
+        username = "raf";         
         timezone = "America/Lima";
         locale = "en_US.UTF-8";              
       };
@@ -41,7 +41,7 @@
         };
       };
       homeConfigurations = {
-        "rfmanz" = home-manager.lib.homeManagerConfiguration {
+        "raf" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.${systemSettings.system};
           modules = [(./. + "/profiles" + ("/" + systemSettings.profile)
               + "/home.nix")       
