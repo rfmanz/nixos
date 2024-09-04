@@ -10,10 +10,14 @@
     };    
     hyprland.url = "github:hyprwm/Hyprland";
     hyprwm-contrib.url = "github:hyprwm/contrib";
+      hyprcursor = {
+    url = "github:hyprwm/hyprcursor";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
     
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, ... }@inputs: 
+  outputs = { self, nixpkgs, home-manager, hyprland, hyprcursor, ... }@inputs: 
     let
       systemSettings = {
         profile = "rog"; # !! SET !!

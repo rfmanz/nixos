@@ -1,4 +1,4 @@
-{ config, pkgs, systemSettings, ... }:
+{ config, pkgs, systemSettings, inputs, ... }:
 
 {
   imports =
@@ -11,11 +11,15 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+
   };
+
 
   environment.systemPackages = with pkgs; [
     git
     vscode    
+
   ];
 
 nix.package = pkgs.nixFlakes;    
@@ -42,7 +46,9 @@ hardware.bluetooth.enable = true;
 hardware.bluetooth.powerOnBoot = true;
 
 nix.settings.auto-optimise-store = true;
-
+nix.extraOptions = ''
+    experimental-features = nix-command
+    '';
 
 system.stateVersion = "24.05"; 
 
