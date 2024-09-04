@@ -16,7 +16,7 @@
   outputs = { self, nixpkgs, home-manager, hyprland, ... }@inputs: 
     let
       systemSettings = {
-        profile = "minimal"; # !! SET !!
+        profile = "rog"; # !! SET !!
         system = "x86_64-linux";
         hostname = "nixos";        
         username = "raf";         

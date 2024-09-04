@@ -4,7 +4,7 @@
   imports =
     [ ../../system/locale.nix
       ../../system/sound.nix    
-      ../../system/nividia  
+      ../../system/nvidia.nix
       ../../system/hardware-configuration.nix      
     ];
 
@@ -24,6 +24,7 @@ boot.loader.systemd-boot.enable = true;
 boot.loader.efi.canTouchEfiVariables = true;
 networking.hostName = systemSettings.hostname;
 networking.networkmanager.enable = true;
+boot.kernelPackages = pkgs.linuxPackages_testing;
 
 users.users.${systemSettings.username} = {
   isNormalUser = true;

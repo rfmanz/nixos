@@ -11,6 +11,7 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
+    
   };
 
   environment.systemPackages = with pkgs; [
@@ -27,7 +28,7 @@ networking.networkmanager.enable = true;
 
 users.users.${systemSettings.username} = {
   isNormalUser = true;
-  description = "rfmanz";
+  description = "raf";
   extraGroups = [ "networkmanager" "wheel" ];
   shell = pkgs.zsh;
 };
