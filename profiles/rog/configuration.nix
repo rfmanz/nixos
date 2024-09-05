@@ -1,55 +1,71 @@
 { config, pkgs, systemSettings, inputs, ... }:
 
 {
-  imports =
-    [ ../../system/locale.nix
-      ../../system/sound.nix    
-      ../../system/nvidia.nix
-      ../../system/hardware-configuration.nix      
-    ];
+  imports = [
+    ../../system/locale.nix
+    ../../system/sound.nix
+    ../../system/nvidia.nix
+    ../../system/hardware-configuration.nix
+  ];
 
+  # Hyprland configuration
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-
+    # Consider removing this line if using the module from the flake
+    # package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
 
-
+  # System packages
   environment.systemPackages = with pkgs; [
     git
-    vscode    
-
+    vscode
   ];
 
-nix.package = pkgs.nixFlakes;    
-nix.settings.experimental-features = [ "nix-command" "flakes" ];
-boot.loader.systemd-boot.enable = true;
-boot.loader.efi.canTouchEfiVariables = true;
-networking.hostName = systemSettings.hostname;
-networking.networkmanager.enable = true;
-boot.kernelPackages = pkgs.linuxPackages_testing;
+  # Nix configuration
+  nix = {
+    package = pkgs.nixFlakes;
+    settings = {
+      experimental-features = [ "nix-command" "flakes" ];
+      auto-optimise-store = true;
+    };
+    # Removed redundant extraOptions
+  };
 
-users.users.${systemSettings.username} = {
-  isNormalUser = true;
-  description = "rfmanz";
-  extraGroups = [ "networkmanager" "wheel" "docker" ];
-  shell = pkgs.zsh;
-};
+  # Boot configuration
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+    kernelPackages = pkgs.linuxPackages_testing;
+  };
 
+  # Networking
+  networking = {
+    hostName = systemSettings.hostname;
+    networkmanager.enable = true;
+  };
 
-nixpkgs.config.allowUnfree = true;
-programs.zsh.enable = true;
-virtualisation.docker.enable = true;
+  # User configuration
+  users.users.${systemSettings.username} = {
+    isNormalUser = true;
+    description = "rfmanz";
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    shell = pkgs.zsh;
+  };
 
-hardware.bluetooth.enable = true;
-hardware.bluetooth.powerOnBoot = true;
+  # System configuration
+  nixpkgs.config.allowUnfree = true;
+  programs.zsh.enable = true;
+  virtualisation.docker.enable = true;
 
-nix.settings.auto-optimise-store = true;
-nix.extraOptions = ''
-    experimental-features = nix-command
-    '';
+  # Hardware configuration
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
 
-system.stateVersion = "24.05"; 
-
+  # Consider updating this to match your nixpkgs input in the flake
+  system.stateVersion = "24.05";
 }

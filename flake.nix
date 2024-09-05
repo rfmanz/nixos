@@ -8,16 +8,15 @@
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };    
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     hyprwm-contrib.url = "github:hyprwm/contrib";
-      hyprcursor = {
-    url = "github:hyprwm/hyprcursor";
-    inputs.nixpkgs.follows = "nixpkgs";
-  };
-    
+    hyprcursor = {
+      url = "github:hyprwm/hyprcursor";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, hyprcursor, ... }@inputs: 
+  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, hyprland, hyprwm-contrib, hyprcursor, ... }@inputs: 
     let
       systemSettings = {
         profile = "rog"; # !! SET !!
@@ -31,12 +30,12 @@
     {
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
-        system = systemSettings.system;
+          system = systemSettings.system;
           modules = [        
-            (./. + "/profiles" + ("/" + systemSettings.profile)
-              + "/configuration.nix")
+            (./. + "/profiles" + ("/" + systemSettings.profile) + "/configuration.nix")
+            hyprland.nixosModules.default
             { programs.hyprland.enable = true; }
-            { programs.sway.enable = true; }
+            # Removed Sway to avoid conflicts
           ]; 
           specialArgs = {
             inherit systemSettings;
@@ -45,10 +44,10 @@
         };
       };
       homeConfigurations = {
-        "raf" = home-manager.lib.homeManagerConfiguration {
+        "${systemSettings.username}" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.${systemSettings.system};
-          modules = [(./. + "/profiles" + ("/" + systemSettings.profile)
-              + "/home.nix")       
+          modules = [
+            (./. + "/profiles" + ("/" + systemSettings.profile) + "/home.nix")       
           ];
           extraSpecialArgs = { 
             inherit inputs;
