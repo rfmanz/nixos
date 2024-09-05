@@ -32,6 +32,8 @@ asciiquarium
 google-chrome
 btop
 spotify
+pamixer   
+brightnessctl 
   ];
   programs.home-manager.enable = true;
 }

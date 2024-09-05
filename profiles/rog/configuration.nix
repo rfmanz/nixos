@@ -12,8 +12,6 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
-    # Consider removing this line if using the module from the flake
-    # package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
 
   # System packages
@@ -29,7 +27,6 @@
       experimental-features = [ "nix-command" "flakes" ];
       auto-optimise-store = true;
     };
-    # Removed redundant extraOptions
   };
 
   # Boot configuration
@@ -66,6 +63,51 @@
     powerOnBoot = true;
   };
 
-  # Consider updating this to match your nixpkgs input in the flake
+  # NVIDIA configuration
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement.enable = true;
+    powerManagement.finegrained = true;
+    open = false;
+    nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    prime = {
+      offload = {
+        enable = true;
+        enableOffloadCmd = true;
+      };
+      # Corrected Bus IDs based on lshw output
+      nvidiaBusId = "PCI:1:0:0";
+      amdgpuBusId = "PCI:101:0:0";
+    };
+  };
+
+  # OpenGL configuration
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+
+  # Wayland and graphics configuration
+  services.xserver.videoDrivers = [ "nvidia" "amdgpu" ];
+
+  environment.sessionVariables = {
+    XCURSOR_SIZE = "32";
+    GDK_SCALE = "1.5";
+    QT_AUTO_SCREEN_SCALE_FACTOR = "1";
+    QT_SCALE_FACTOR = "1.5";
+  };
+
+  # Improve font rendering
+  fonts.fontconfig = {
+    enable = true;
+    antialias = true;
+    hinting = {
+      enable = true;
+      style = "slight";
+    };
+    subpixel.rgba = "rgb";
+  };
+
   system.stateVersion = "24.05";
 }
